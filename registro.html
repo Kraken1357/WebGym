@@ -1,12 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+<style>
+    /* Configuración general */
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+}
 
+/* Título */
+.txGrande {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #1f3c88;
+}
+
+/* Texto secundario */
+.txMediano {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Contenedor del formulario */
+.registro {
+    width: 450px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Formulario */
+#registro {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas */
+#registro label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Campos de texto */
+#registro input[type="text"] {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Cuando se selecciona un campo */
+#registro input[type="text"]:focus {
+    outline: none;
+    border-color: #1f3c88;
+    box-shadow: 0 0 4px rgba(31, 60, 136, 0.3);
+}
+
+/* Contenedor visual para los radios */
+#registro input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Botón */
+#registro button {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1f3c88;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Efecto del botón */
+#registro button:hover {
+    background-color: #162d68;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 550px) {
+    body {
+        padding: 20px;
+    }
+
+    .registro {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+</style>
+</head>
 <body>
     <div class="txGrande">
         Registrate a continuacion
@@ -29,29 +129,18 @@
             <input type="text" id="correo" name="correo" required>
             </br>
             <br>
-            <label for="edad">Edad: </label>
-            <input type="text" id="edad" name="edad" required>
-            </br>
-            <br>
-            <label for="peso">Peso: </label>
-            <input type="text" id="peso" name="peso" required>
-            </br>
-            <br>
-            <label for="altura">Altura: </label>
-            <input type="text" id="altura" name="altura" required>
-            </br>
+            <label for="telefono">Teléfono: </label>
+            <input type="text" id="telefono" name="telefono" required>
+            </br> 
             <br>
             <label for="Genero">Genero:</label>
             <label for="Masculino">Masculino: </label>
             <input type="radio" id="Masculino" name="genero" value="Masculino" required>
             <label for="Femenino">Femenino</label>
             <input type="radio" id="Femenino" name="genero" value="Femenino" required>
-            </br>
-
-            
+                        </br>
             <button type="submit">Registrarme</button>
         </form>
-        -----------levantar ventana emergente al completar
     </div>
 </body>
 
