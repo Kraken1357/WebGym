@@ -1,77 +1,197 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+
+/* =========================
+   HEADER / MENÚ
+========================= */
+
 header {
-    background-color: #0f172a;
-
+    background: #89131B;
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
-
-    box-shadow:
-        0 2px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
 }
 
 .navbar {
     width: 90%;
-    max-width: 1150px;
+    max-width: 1200px;
+    min-height: 75px;
 
     margin: auto;
 
-    min-height: 70px;
-
     display: flex;
-
     align-items: center;
-
-    justify-content: space-between;
-}
-
-.logo {
-    color: white;
-
-    font-size: 22px;
-
-    font-weight: bold;
+    justify-content: center;
 }
 
 .menu {
     list-style: none;
 
     display: flex;
-
-    gap: 30px;
+    align-items: center;
+    gap: 40px;
 }
 
-.hero {
-    min-height: 88vh;
+.menu li a {
+    color: white;
+    text-decoration: none;
 
-    background-image:
-        url("../img/banner.jpg");
+    font-size: 16px;
+    font-weight: bold;
+
+    padding: 10px 5px;
+
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+
+.menu li a:hover {
+    color: #ff4d4d;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: calc(100vh - 75px);
+
+    background-image: url("../img/banner.png");
 
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
-
     background-attachment: fixed;
 }
 
-.hero-overlay {
-    min-height: 88vh;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(15, 23, 42, 0.91),
-            rgba(30, 64, 175, 0.72)
-        );
+/* Capa oscura sobre la imagen */
+
+.hero-overlay {
+    min-height: calc(100vh - 75px);
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.82),
+        rgba(0, 0, 0, 0.55),
+        rgba(87, 0, 0, 0.45)
+    );
 
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
+    padding: 50px;
+}
 
-    padding: 60px 20px;
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+.hero-overlay {
+    flex-direction: column;
+    text-align: center;
+}
+
+
+/* Logo */
+
+.foto-logo {
+    width: 220px;
+    height: 220px;
+
+    object-fit: contain;
+
+    margin-bottom: 20px;
+
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.7));
+
+    transition: transform 0.3s;
+}
+
+.foto-logo:hover {
+    transform: scale(1.05);
+}
+
+
+/* Título */
+
+.hero-overlay h1 {
+    font-size: 48px;
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+
+    text-shadow: 3px 3px 8px black;
+}
+
+
+/* Descripción */
+
+.hero-overlay p {
+    max-width: 700px;
+
+    font-size: 19px;
+    line-height: 1.6;
+
+    text-shadow: 2px 2px 5px black;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu li a {
+        font-size: 14px;
+    }
+
+    .navbar {
+        min-height: 90px;
+    }
+
+    .hero-overlay {
+        padding: 30px 20px;
+    }
+
+    .foto-logo {
+        width: 170px;
+        height: 170px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 34px;
+        letter-spacing: 2px;
+    }
+
+    .hero-overlay p {
+        font-size: 16px;
+    }
 }
