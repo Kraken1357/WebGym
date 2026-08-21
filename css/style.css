@@ -194,4 +194,8 @@ header {
     .hero-overlay p {
         font-size: 16px;
     }
+  
+}
+  .oculto{
+    display: none;
 }

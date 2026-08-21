@@ -1,23 +1,29 @@
-console.log('script cargado')
-const btn = document.getElementById('button');
+let codigo;
+
+
 document.getElementById('form')
   .addEventListener('submit', function (event) {
-    console.log('submit detectado')
     event.preventDefault();
-
-    btn.value = 'Sending...';
-
+    codigo = Math.floor(Math.random() * 900000) + 100000;
+    document.getElementById('codegen').value = codigo;
     const serviceID = 'default_service';
     const templateID = 'template_m55lyvc';
 
     emailjs.sendForm(serviceID, templateID, this).then(
       () => {
-        btn.value = 'Send Email';
-        alert('Sent!');
+        alert('Correo enviado, revisa tu bandeja de entrada');
+        document.getElementById('divRegistro').classList.add('oculto');
+        document.getElementById('divVerificacion').classList.remove('oculto');
       },
       (err) => {
-        btn.value = 'Send Email';
         alert(JSON.stringify(err));
       },
     );
+  });
+document.getElementById('validation')
+  .addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (codigo == Number(document.getElementById('codigo').value)) {
+      alert('Se ha confirmado su registro');
+    }
   });

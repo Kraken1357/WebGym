@@ -24,7 +24,7 @@
         <p>
             Llena los campos solicitados para continuar con tu registro.
         </p>
-        <div class="registro">
+        <div class="registro" id="divRegistro">
             <form id="form">
                 <div class="field">
                     <label for="nombre">nombre</label>
@@ -48,18 +48,27 @@
                 <input type="radio" id="Masculino" name="genero" value="Masculino" required>
                 <label for="Femenino">Femenino</label>
                 <input type="radio" id="Femenino" name="genero" value="Femenino" required>
+                <input type="hidden" id="codegen" name="codegen">
                 <br>
                 <input type="submit" id="button" value="Registrarme">
             </form>
-
         </div>
+        <!-- ------------------------------------------------------------ -->
+        <div class="oculto" id="divVerificacion">
+            <form id="validation">
+                <label for="codigo"> Ingrese el codigo de verificacion enviado a su correo</label>
+                <input type="text" id="codigo" name="codigo" required>
+                <input type="submit" id="btVerificar" value="Verificar">
+            </form>
+        </div>
+        <!-- ------------------------------------------------------------ -->
     </div>
-    <script src="js/script.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <script type="text/javascript">
-        emailjs.init('u6EV0CFY1NLBo-sVk')
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+    <script type="text/javascript">
+        emailjs.init('u6EV0CFY1NLBo-sVk');
+    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
