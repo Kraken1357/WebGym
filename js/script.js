@@ -25,5 +25,8 @@ document.getElementById('validation')
     event.preventDefault();
     if (codigo == Number(document.getElementById('codigo').value)) {
       alert('Se ha confirmado su registro');
+      window.location.href = "index.html";
+    } else {
+      alert('Codigo incorrecto');
     }
   });
