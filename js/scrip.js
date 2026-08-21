@@ -1,21 +1,22 @@
-const btn = document.getElementById('button');
+const btn = document.getElementById('enviar');
 
-document.getElementById('form').addEventListener('submit', function (event) {
-  event.preventDefault();
+document.getElementById('registro')
+  .addEventListener('submit', function (event) {
+    event.preventDefault();
 
-  btn.value = 'Sending...';
+    btn.value = 'Sending...';
 
-  const serviceID = 'default_service';
-  const templateID = 'template_m55lyvc';
+    const serviceID = 'default_service';
+    const templateID = 'template_m55lyvc';
 
-  emailjs.sendForm(serviceID, templateID, this).then(
-    () => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    },
-    (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    },
-  );
-});
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
+        btn.value = 'Send Email';
+        alert('Sent!');
+      },
+      (err) => {
+        btn.value = 'Send Email';
+        alert(JSON.stringify(err));
+      },
+    );
+  });

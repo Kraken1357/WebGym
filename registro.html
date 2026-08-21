@@ -19,7 +19,7 @@
         <form id="registro">
             <br>
             <label for="nombre">Nombre: </label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="name" name="nombre" required>
             </br>
             <br>
             <label for="identificacion">Identificación: </label>
@@ -27,7 +27,7 @@
             </br>
             <br>
             <label for="correo">Correo: </label>
-            <input type="text" id="correo" name="correo" required>
+            <input type="text" id="email" name="correo" required>
             </br>
             <br>
             <label for="telefono">Teléfono: </label>
@@ -41,12 +41,10 @@
             <label for="Femenino">Femenino</label>
             <input type="radio" id="Femenino" name="genero" value="Femenino" required>
             </br>
-            <button type="submit">Registrarme</button>
+            <button type="submit" id="enviar">Registrarme</button>
         </form>
     </div>
-    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
     <script type="text/javascript">
         emailjs.init('u6EV0CFY1NLBo-sVk')
     </script>
