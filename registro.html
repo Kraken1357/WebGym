@@ -26,40 +26,41 @@
                 Llena los campos solicitados para continuar con tu registro.
             </p>
             <div class="registro">
-                <div class="registro">
-                    <form id="formulario">
-                        <div class="campo">
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" id="name" name="nombre" required>
-                        </div>
-                        <div class="campo">
-                            <label for="identificacion">Identificación: </label>
-                            <input type="text" id="identificacion" name="id" required>
-                        </div>
-                        <div class="campo">
-                            <label for="correo">Correo: </label>
-                            <input type="text" id="email" name="correo" required>
-                        </div>
-                        <div class="campo">
-                            <label for="telefono">Teléfono: </label>
-                            <input type="text" id="telefono" name="telefono" required>
-                        </div>
+                <form id="formulario">
+                    <div class="campo">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" id="name" name="nombre" required>
+                    </div>
+                    <div class="campo">
+                        <label for="identificacion">Identificación: </label>
+                        <input type="text" id="identificacion" name="id" required>
+                    </div>
+                    <div class="campo">
+                        <label for="correo">Correo: </label>
+                        <input type="text" id="email" name="correo" required>
+                    </div>
+                    <div class="campo">
+                        <label for="telefono">Teléfono: </label>
+                        <input type="text" id="telefono" name="telefono" required>
+                    </div>
 
-                        <label for="Genero">Genero:</label>
-                        <label for="Masculino">Masculino: </label>
-                        <input type="radio" id="Masculino" name="genero" value="Masculino" required>
-                        <label for="Femenino">Femenino</label>
-                        <input type="radio" id="Femenino" name="genero" value="Femenino" required>
-                        <br></br>
-                        <button type="submit" id="enviar">Registrarme</button>
-                    </form>
-                </div>
+                    <label for="Genero">Genero:</label>
+                    <label for="Masculino">Masculino: </label>
+                    <input type="radio" id="Masculino" name="genero" value="Masculino" required>
+                    <label for="Femenino">Femenino</label>
+                    <input type="radio" id="Femenino" name="genero" value="Femenino" required>
+                    <br>
+                    <input type="submit" id="enviar" value="Registrarme">
+                </form>
             </div>
+        </div>
     </main>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script type="text/javascript">
-        emailjs.init('u6EV0CFY1NLBo-sVk')
+        emailjs.init({
+            publicKey: 'u6EV0CFY1NLBo-sVk'
+        });
     </script>
 
 </body>
