@@ -1,53 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="txGrande">
-        Registrate a continuacion
-    </div>
-    <div class="txMediano">
-        Llena los campos solicitado para continuar con tu resgistro
-    </div>
-    <div class="registro">
-        <form id="registro">
-            <br>
-            <label for="nombre">Nombre: </label>
-            <input type="text" id="name" name="nombre" required>
-            </br>
-            <br>
-            <label for="identificacion">Identificación: </label>
-            <input type="text" id="identificacion" name="id" required>
-            </br>
-            <br>
-            <label for="correo">Correo: </label>
-            <input type="text" id="email" name="correo" required>
-            </br>
-            <br>
-            <label for="telefono">Teléfono: </label>
-            <input type="text" id="telefono" name="telefono" required>
-            </br>
-            <br>
-            <label for="Genero">Genero:</label>
-            <label for="Masculino">Masculino: </label>
-            <input type="radio" id="Masculino" name="genero" value="Masculino" required>
-            <br>
-            <label for="Femenino">Femenino</label>
-            <input type="radio" id="Femenino" name="genero" value="Femenino" required>
-            </br>
-            <button type="submit" id="enviar">Registrarme</button>
-        </form>
-    </div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        emailjs.init('u6EV0CFY1NLBo-sVk')
+    <header>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-overlay">
+            <img class="foto-logo" src="img/logo.png" alt="Logo">
+            <h1>Regístrate a continuación</h1>
+            <p>
+                Llena los campos solicitados para continuar con tu registro.
+            </p>
+            <div class="registro">
+                <form id="registro">
+                    <div class="campo">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="nombre" required>
+                    </div>
+                    <div class="campo">
+                        <label for="identificacion">Identificación:</label>
+                        <input type="text" id="identificacion" name="id" required>
+                    </div>
+                    <div class="campo">
+                        <label for="email">Correo:</label>
+                        <input type="email" id="email" name="correo" required>
+                    </div>
+                    <div class="campo">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="campo">
+                        <label>Género:</label>
+                        <div class="genero">
+                            <label for="Masculino">
+                                <input type="radio" id="Masculino" name="genero" value="Masculino" required>
+                                Masculino
+                            </label>
+                            <label for="Femenino">
+                                <input type="radio" id="Femenino" name="genero" value="Femenino">
+                                Femenino
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" id="enviar">
+                        Registrarme
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+    <script type="text/javascript">
+
+        emailjs.init({
+            publicKey: "u6EV0CFY1NLBo-sVk"
+        });
+
+
+        const formulario = document.getElementById("registro");
+
+
+        formulario.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            const boton = document.getElementById("enviar");
+
+            boton.disabled = true;
+            boton.textContent = "Enviando...";
+
+
+            emailjs.sendForm(
+                "TU_SERVICE_ID",
+                "TU_TEMPLATE_ID",
+                formulario
+            )
+                .then(function () {
+
+                    alert("Registro enviado correctamente.");
+
+                    formulario.reset();
+
+                    boton.disabled = false;
+                    boton.textContent = "Registrarme";
+
+                })
+                .catch(function (error) {
+
+                    console.error("Error:", error);
+
+                    alert("No se pudo enviar el registro.");
+
+                    boton.disabled = false;
+                    boton.textContent = "Registrarme";
+
+                });
+
+        });
+
+    </script>
+
 </body>
 
 </html>

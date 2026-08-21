@@ -1,5 +1,4 @@
 const btn = document.getElementById('enviar');
-
 document.getElementById('registro')
   .addEventListener('submit', function (event) {
     event.preventDefault();
