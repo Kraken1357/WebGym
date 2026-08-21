@@ -1,0 +1,77 @@
+header {
+    background-color: #0f172a;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1150px;
+
+    margin: auto;
+
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+
+    display: flex;
+
+    gap: 30px;
+}
+
+.hero {
+    min-height: 88vh;
+
+    background-image:
+        url("../img/banner.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+.hero-overlay {
+    min-height: 88vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.91),
+            rgba(30, 64, 175, 0.72)
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+}
