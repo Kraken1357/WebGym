@@ -64,58 +64,10 @@
         </div>
     </main>
 
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <script type="text/javascript">
-
-        emailjs.init({
-            publicKey: "u6EV0CFY1NLBo-sVk"
-        });
-
-
-        const formulario = document.getElementById("registro");
-
-
-        formulario.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-
-            const boton = document.getElementById("enviar");
-
-            boton.disabled = true;
-            boton.textContent = "Enviando...";
-
-
-            emailjs.sendForm(
-                "TU_SERVICE_ID",
-                "TU_TEMPLATE_ID",
-                formulario
-            )
-                .then(function () {
-
-                    alert("Registro enviado correctamente.");
-
-                    formulario.reset();
-
-                    boton.disabled = false;
-                    boton.textContent = "Registrarme";
-
-                })
-                .catch(function (error) {
-
-                    console.error("Error:", error);
-
-                    alert("No se pudo enviar el registro.");
-
-                    boton.disabled = false;
-                    boton.textContent = "Registrarme";
-
-                });
-
-        });
-
+        emailjs.init('u6EV0CFY1NLBo-sVk')
     </script>
 
 </body>
