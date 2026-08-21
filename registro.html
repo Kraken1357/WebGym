@@ -25,29 +25,23 @@
             Llena los campos solicitados para continuar con tu registro.
         </p>
         <div class="registro" id="divRegistro">
-            <form id="form">
-                <div class="field">
-                    <label for="nombre">nombre</label>
-                    <input type="text" name="nombre" id="nombre">
-                </div>
-                <div class="field">
-                    <label for="email">email</label>
-                    <input type="text" name="email" id="email">
-                </div>
-                <div class="campo">
-                    <label for="identificacion">Identificación: </label>
-                    <input type="text" id="identificacion" name="id" required>
-                </div>
-                <div class="campo">
-                    <label for="telefono">Teléfono: </label>
-                    <input type="text" id="telefono" name="telefono" required>
-                </div>
-
+            <form id="form" class="item">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+                <label for="identificacion">Identificación: </label>
+                <input type="text" id="identificacion" name="id" required>
+                <label for="telefono">Teléfono: </label>
+                <input type="text" id="telefono" name="telefono" required>
                 <label>Genero:</label>
+                
+                <div>
                 <label for="Masculino">Masculino: </label>
                 <input type="radio" id="Masculino" name="genero" value="Masculino" required>
                 <label for="Femenino">Femenino</label>
                 <input type="radio" id="Femenino" name="genero" value="Femenino" required>
+                </div>
                 <input type="hidden" id="codegen" name="codegen">
                 <br>
                 <input type="submit" id="button" value="Registrarme">

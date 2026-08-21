@@ -17,7 +17,7 @@ body {
 
     background-color: #ffffff;
 
-    color: #334155;
+    color: #f9f9f9;
 
     line-height: 1.6;
 }
@@ -104,12 +104,10 @@ header {
 .hero-overlay {
     min-height: calc(100vh - 75px);
 
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.82),
-        rgba(0, 0, 0, 0.55),
-        rgba(87, 0, 0, 0.45)
-    );
+    background: linear-gradient(90deg,
+            rgb(93, 21, 21, 0.99),
+            rgba(0, 0, 0, 0.99),
+            rgba(93, 21, 21, 0.99));
 
     display: flex;
     align-items: center;
@@ -212,9 +210,10 @@ header {
     .hero-overlay p {
         font-size: 16px;
     }
-  
+
 }
-  .oculto{
+
+.oculto {
     display: none;
 }
 
@@ -249,7 +248,7 @@ header {
     margin-bottom: 15px;
 }
 
-.contacto-info > p {
+.contacto-info>p {
     color: #cbd5e1;
 
     margin-bottom: 30px;
@@ -266,3 +265,15 @@ header {
 
     margin-bottom: 5px;
 }
+
+.item {
+     display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+
+    align-items: center;
+
+    margin-top: 10px;
+} 
