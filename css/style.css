@@ -104,12 +104,10 @@ header {
 .hero-overlay {
     min-height: calc(100vh - 75px);
 
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.82),
-        rgba(0, 0, 0, 0.55),
-        rgba(87, 0, 0, 0.45)
-    );
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.55),
+            rgba(87, 0, 0, 0.45));
 
     display: flex;
     align-items: center;
@@ -212,9 +210,10 @@ header {
     .hero-overlay p {
         font-size: 16px;
     }
-  
+
 }
-  .oculto{
+
+.oculto {
     display: none;
 }
 
@@ -249,7 +248,7 @@ header {
     margin-bottom: 15px;
 }
 
-.contacto-info > p {
+.contacto-info>p {
     color: #cbd5e1;
 
     margin-bottom: 30px;
@@ -292,13 +291,15 @@ header {
     align-items: center;
     margin-top: 10px;
 }
-.equipo{
-      display: grid;
+
+.equipo {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px; 
+    gap: 20px;
     margin-top: 10px;
     text-align: left;
 }
+
 .titulo-seccion {
     font-size: 36px;
     color: #89131B;
