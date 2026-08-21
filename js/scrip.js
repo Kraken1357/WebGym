@@ -1,5 +1,5 @@
-const btn = document.getElementById('enviar');
-document.getElementById('formulario')
+const btn = document.getElementById('button');
+document.getElementById('form')
   .addEventListener('submit', function (event) {
     event.preventDefault();
 

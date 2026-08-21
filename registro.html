@@ -26,7 +26,7 @@
                 Llena los campos solicitados para continuar con tu registro.
             </p>
             <div class="registro">
-                <form id="formulario">
+                <form id="form">
                     <div class="campo">
                         <label for="nombre">Nombre: </label>
                         <input type="text" id="name" name="nombre" required>
@@ -50,19 +50,17 @@
                     <label for="Femenino">Femenino</label>
                     <input type="radio" id="Femenino" name="genero" value="Femenino" required>
                     <br>
-                    <input type="submit" id="enviar" value="Registrarme">
+                    <input type="submit" id="button" value="Registrarme">
                 </form>
+
             </div>
         </div>
     </main>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script type="text/javascript">
-        emailjs.init({
-            publicKey: 'u6EV0CFY1NLBo-sVk'
-        });
+        emailjs.init('u6EV0CFY1NLBo-sVk')
     </script>
-
 </body>
 
 </html>
