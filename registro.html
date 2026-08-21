@@ -34,21 +34,21 @@
                     <label for="email">email</label>
                     <input type="text" name="email" id="email">
                 </div>
-                   <div class="campo">
-                        <label for="identificacion">Identificación: </label>
-                        <input type="text" id="identificacion" name="id" required>
-                    </div>
-                    <div class="campo">
-                        <label for="telefono">Teléfono: </label>
-                        <input type="text" id="telefono" name="telefono" required>
-                    </div>
+                <div class="campo">
+                    <label for="identificacion">Identificación: </label>
+                    <input type="text" id="identificacion" name="id" required>
+                </div>
+                <div class="campo">
+                    <label for="telefono">Teléfono: </label>
+                    <input type="text" id="telefono" name="telefono" required>
+                </div>
 
-                    <label>Genero:</label>
-                    <label for="Masculino">Masculino: </label>
-                    <input type="radio" id="Masculino" name="genero" value="Masculino" required>
-                    <label for="Femenino">Femenino</label>
-                    <input type="radio" id="Femenino" name="genero" value="Femenino" required>
-                    <br>
+                <label>Genero:</label>
+                <label for="Masculino">Masculino: </label>
+                <input type="radio" id="Masculino" name="genero" value="Masculino" required>
+                <label for="Femenino">Femenino</label>
+                <input type="radio" id="Femenino" name="genero" value="Femenino" required>
+                <br>
                 <input type="submit" id="button" value="Registrarme">
             </form>
 
@@ -58,7 +58,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script type="text/javascript">
-        emailjs.init({ publickey: 'u6EV0CFY1NLBo-sVk' });
+        emailjs.init('u6EV0CFY1NLBo-sVk')
     </script>
 </body>
 
