@@ -5,108 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        /* Configuración general */
-        body {
-            margin: 0;
-            padding: 40px;
-            font-family: Arial, sans-serif;
-            background-color: #f2f4f7;
-            color: #333;
-        }
-
-        /* Título */
-        .txGrande {
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #1f3c88;
-        }
-
-        /* Texto secundario */
-        .txMediano {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        /* Contenedor del formulario */
-        .registro {
-            width: 450px;
-            margin: 0 auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Formulario */
-        #registro {
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Etiquetas */
-        #registro label {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        /* Campos de texto */
-        #registro input[type="text"] {
-            padding: 10px;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-            font-size: 15px;
-            box-sizing: border-box;
-            margin-bottom: 10px;
-        }
-
-        /* Cuando se selecciona un campo */
-        #registro input[type="text"]:focus {
-            outline: none;
-            border-color: #1f3c88;
-            box-shadow: 0 0 4px rgba(31, 60, 136, 0.3);
-        }
-
-        /* Contenedor visual para los radios */
-        #registro input[type="radio"] {
-            margin-right: 5px;
-        }
-
-        /* Botón */
-        #registro button {
-            margin-top: 20px;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            background-color: #1f3c88;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* Efecto del botón */
-        #registro button:hover {
-            background-color: #162d68;
-        }
-
-        /* Adaptación para pantallas pequeñas */
-        @media (max-width: 550px) {
-            body {
-                padding: 20px;
-            }
-
-            .registro {
-                width: 100%;
-                box-sizing: border-box;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -145,39 +44,11 @@
             <button type="submit">Registrarme</button>
         </form>
     </div>
-    <script>
-        const formulario = document.getElementById('registro');
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-        formulario.addEventListener('submit', async function (event) {
-            event.preventDefault();
-
-            const nombre = document.getElementById('nombre').value;
-            const identificacion = document.getElementById('identificacion').value;
-            const correo = document.getElementById('correo').value;
-            const telefono = document.getElementById('telefono').value;
-            const genero = document.querySelector('input[name="genero"]:checked').value;
-
-            const respuesta = await fetch("/api/enviar-correo", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    nombre: nombre,
-                    identificacion: identificacion,
-                    correo: correo,
-                    telefono: telefono,
-                    genero: genero
-                })
-            });
-            const datos = await respuesta.json();
-            if (respuesta.ok) {
-                resultado.textContent = "Verifica tu correo para completar el registro.";
-                formulario.reset();
-            } else {
-                resultado.textContent = "Error: " + datos.error;
-            }
-        });
+    <script type="text/javascript">
+        emailjs.init('u6EV0CFY1NLBo-sVk')
     </script>
 </body>
 
