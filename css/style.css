@@ -266,3 +266,17 @@ header {
 
     margin-bottom: 5px;
 }
+
+.titulo-seccion {
+    font-size: 36px;
+    color: #89131B;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitulo-seccion {
+    font-size: 18px;
+    color: #475569;
+    margin-bottom: 30px;
+}
