@@ -26,96 +26,41 @@
                 Llena los campos solicitados para continuar con tu registro.
             </p>
             <div class="registro">
-                <form id="registro">
-                    <div class="campo">
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="nombre" required>
-                    </div>
-                    <div class="campo">
-                        <label for="identificacion">Identificación:</label>
-                        <input type="text" id="identificacion" name="id" required>
-                    </div>
-                    <div class="campo">
-                        <label for="email">Correo:</label>
-                        <input type="email" id="email" name="correo" required>
-                    </div>
-                    <div class="campo">
-                        <label for="telefono">Teléfono:</label>
-                        <input type="text" id="telefono" name="telefono" required>
-                    </div>
-                    <div class="campo">
-                        <label>Género:</label>
-                        <div class="genero">
-                            <label for="Masculino">
-                                <input type="radio" id="Masculino" name="genero" value="Masculino" required>
-                                Masculino
-                            </label>
-                            <label for="Femenino">
-                                <input type="radio" id="Femenino" name="genero" value="Femenino">
-                                Femenino
-                            </label>
+                <div class="registro">
+                    <form id="formulario">
+                        <div class="campo">
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" id="name" name="nombre" required>
                         </div>
-                    </div>
-                    <button type="submit" id="enviar">
-                        Registrarme
-                    </button>
-                </form>
+                        <div class="campo">
+                            <label for="identificacion">Identificación: </label>
+                            <input type="text" id="identificacion" name="id" required>
+                        </div>
+                        <div class="campo">
+                            <label for="correo">Correo: </label>
+                            <input type="text" id="email" name="correo" required>
+                        </div>
+                        <div class="campo">
+                            <label for="telefono">Teléfono: </label>
+                            <input type="text" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="campo">
+                            <label for="Genero">Genero:</label>
+                            <label for="Masculino">Masculino: </label>
+                            <input type="radio" id="Masculino" name="genero" value="Masculino" required>
+                            <br>
+                            <label for="Femenino">Femenino</label>
+                            <input type="radio" id="Femenino" name="genero" value="Femenino" required>
+                            </br>
+                            <button type="submit" id="enviar">Registrarme</button>
+                    </form>
+                </div>
             </div>
-        </div>
     </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
     <script type="text/javascript">
-
-        emailjs.init({
-            publicKey: "u6EV0CFY1NLBo-sVk"
-        });
-
-
-        const formulario = document.getElementById("registro");
-
-
-        formulario.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-
-            const boton = document.getElementById("enviar");
-
-            boton.disabled = true;
-            boton.textContent = "Enviando...";
-
-
-            emailjs.sendForm(
-                "TU_SERVICE_ID",
-                "TU_TEMPLATE_ID",
-                formulario
-            )
-                .then(function () {
-
-                    alert("Registro enviado correctamente.");
-
-                    formulario.reset();
-
-                    boton.disabled = false;
-                    boton.textContent = "Registrarme";
-
-                })
-                .catch(function (error) {
-
-                    console.error("Error:", error);
-
-                    alert("No se pudo enviar el registro.");
-
-                    boton.disabled = false;
-                    boton.textContent = "Registrarme";
-
-                });
-
-        });
-
+        emailjs.init('u6EV0CFY1NLBo-sVk')
     </script>
 
 </body>
