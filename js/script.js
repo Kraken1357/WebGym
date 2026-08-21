@@ -1,6 +1,8 @@
+console.log('script cargado')
 const btn = document.getElementById('button');
 document.getElementById('form')
   .addEventListener('submit', function (event) {
+    console.log('submit detectado')
     event.preventDefault();
 
     btn.value = 'Sending...';
